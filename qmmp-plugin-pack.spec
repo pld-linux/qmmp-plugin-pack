@@ -26,6 +26,8 @@ BuildRequires:	taglib-devel >= 1.10
 %ifarch %{ix86} %{x8664} x32
 BuildRequires:	yasm
 %endif
+Obsoletes:	qmmp-general-history < 1.3.1-1
+Obsoletes:	qmmp-input-mpg123 < 1.3.1-1
 Requires:	qmmp-effect-srconverter = %{version}-%{release}
 Requires:	qmmp-engine-ffvideo = %{version}-%{release}
 Requires:	qmmp-general-history = %{version}-%{release}
@@ -84,20 +86,6 @@ FFmpeg-based video engine plugin for Qmmp.
 Wtyczka silnika obrazu opartego na bibliotece FFmpeg dla odtwarzacza
 Qmmp.
 
-%package -n qmmp-general-history
-Summary:	History general plugin for Qmmp
-Summary(pl.UTF-8):	Wtyczka ogólna historii dla odtwarzacza Qmmp
-Group:		Libraries
-Requires:	Qt5Sql >= 5.4.0
-Requires:	Qt5Widgets >= 5.4.0
-Requires:	qmmp >= %{qmmp_ver}
-
-%description -n qmmp-general-history
-Listening History general plugin for Qmmp.
-
-%description -n qmmp-general-history -l pl.UTF-8
-Wtyczka ogólna z historią odtwarzania dla odtwarzacza Qmmp.
-
 %package -n qmmp-input-ffap
 Summary:	FFap input plugin for Qmmp
 Summary(pl.UTF-8):	Wtyczka wejściowa FFap dla odtwarzacza Qmmp
@@ -113,22 +101,6 @@ FFap input plugin is an enhanced Monkey's Audio (APE) decoder with
 %description -n qmmp-input-ffap -l pl.UTF-8
 Wtyczka wejściowa FFap to rozszerzony dekoder Monkey's Audio (APE),
 obsługujący 24-bitowe próbki oraz wbudowane metadane cue.
-
-%package -n qmmp-input-mpg123
-Summary:	MPG123 input plugin for Qmmp
-Summary(pl.UTF-8):	Wtyczka wejściowa MPG123 dla odtwarzacza Qmmp
-Group:		Libraries
-Requires:	Qt5Widgets >= 5.4.0
-Requires:	libmpg123 >= 1.13.0
-Requires:	qmmp >= %{qmmp_ver}
-
-%description -n qmmp-input-mpg123
-MPG123 input plugin is an MPEG v1/2 layer1/2/3 decoder with use of the
-libmpg123 library.
-
-%description -n qmmp-input-mpg123
-Wtyczka wejściowa MPG123 to dekoder MPEG v1/2 layer1/2/3,
-wykorzystujący bibliotekę libmpg123.
 
 %package -n qmmp-input-xmp
 Summary:	XMP input plugin for Qmmp
@@ -188,29 +160,21 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n qmmp-effect-srconverter
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/qmmp/Effect/libsrconverter.so
+%attr(755,root,root) %{_libdir}/qmmp-1.3/Effect/libsrconverter.so
 
 %files -n qmmp-engine-ffvideo
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/qmmp/Engines/libffvideo.so
-
-%files -n qmmp-general-history
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/qmmp/General/libhistory.so
+%attr(755,root,root) %{_libdir}/qmmp-1.3/Engines/libffvideo.so
 
 %files -n qmmp-input-ffap
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/qmmp/Input/libffap.so
-
-%files -n qmmp-input-mpg123
-%defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/qmmp/Input/libmpg123.so
+%attr(755,root,root) %{_libdir}/qmmp-1.3/Input/libffap.so
 
 %files -n qmmp-input-xmp
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/qmmp/Input/libxmp.so
+%attr(755,root,root) %{_libdir}/qmmp-1.3/Input/libxmp.so
 
 %files -n qmmp-visual-goom
 %defattr(644,root,root,755)
 %doc src/Visual/goom/CHANGES
-%attr(755,root,root) %{_libdir}/qmmp/Visual/libgoom.so
+%attr(755,root,root) %{_libdir}/qmmp-1.3/Visual/libgoom.so
