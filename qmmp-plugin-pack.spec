@@ -1,13 +1,13 @@
-%define	qmmp_ver	1.2.0
+%define	qmmp_ver	1.3.0
 Summary:	Qmmp Plugin Pack
 Summary(pl.UTF-8):	Zestaw wtyczek dla odtwarzacza Qmmp
 Name:		qmmp-plugin-pack
-Version:	1.2.0
-Release:	2
+Version:	1.3.1
+Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Multimedia
 Source0:	http://qmmp.ylsoftware.com/files/plugins/%{name}-%{version}.tar.bz2
-# Source0-md5:	458117797da6d2d388edc600a6169869
+# Source0-md5:	8d887d991206cdd638f2e50420e4aa72
 Patch0:		%{name}-x32.patch
 URL:		http://qmmp.ylsoftware.com/plugins.php
 BuildRequires:	Qt5Sql-devel >= 5.4.0
