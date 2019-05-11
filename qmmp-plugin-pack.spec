@@ -3,7 +3,7 @@ Summary:	Qmmp Plugin Pack
 Summary(pl.UTF-8):	Zestaw wtyczek dla odtwarzacza Qmmp
 Name:		qmmp-plugin-pack
 Version:	1.3.1
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		X11/Applications/Multimedia
 Source0:	http://qmmp.ylsoftware.com/files/plugins/%{name}-%{version}.tar.bz2
@@ -30,9 +30,7 @@ Obsoletes:	qmmp-general-history < 1.3.1-1
 Obsoletes:	qmmp-input-mpg123 < 1.3.1-1
 Requires:	qmmp-effect-srconverter = %{version}-%{release}
 Requires:	qmmp-engine-ffvideo = %{version}-%{release}
-Requires:	qmmp-general-history = %{version}-%{release}
 Requires:	qmmp-input-ffap = %{version}-%{release}
-Requires:	qmmp-input-mpg123 = %{version}-%{release}
 Requires:	qmmp-input-xmp = %{version}-%{release}
 Requires:	qmmp-visual-goom = %{version}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
