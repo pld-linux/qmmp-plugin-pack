@@ -24,12 +24,12 @@ BuildRequires:	taglib-devel >= 1.10
 %ifarch %{ix86} %{x8664} x32
 BuildRequires:	yasm
 %endif
-Obsoletes:	qmmp-general-history < 1.3.1-1
-Obsoletes:	qmmp-input-mpg123 < 1.3.1-1
 Requires:	qmmp-effect-srconverter = %{version}-%{release}
 Requires:	qmmp-engine-ffvideo = %{version}-%{release}
 Requires:	qmmp-input-ffap = %{version}-%{release}
 Requires:	qmmp-visual-goom = %{version}-%{release}
+Obsoletes:	qmmp-general-history < 1.3.1-1
+Obsoletes:	qmmp-input-mpg123 < 1.3.1-1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -134,6 +134,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog ChangeLog.svn
 %lang(ru) %doc ChangeLog.rus README.RUS
+%{_metainfodir}/qmmp-plugin-pack-1.appdata.xml
 
 %files -n qmmp-effect-srconverter
 %defattr(644,root,root,755)
