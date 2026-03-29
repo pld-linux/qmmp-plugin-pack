@@ -3,7 +3,7 @@ Summary:	Qmmp Plugin Pack
 Summary(pl.UTF-8):	Zestaw wtyczek dla odtwarzacza Qmmp
 Name:		qmmp-plugin-pack
 Version:	2.3.0
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		X11/Applications/Multimedia
 Source0:	https://qmmp.ylsoftware.com/files/qmmp-plugin-pack/2.3/%{name}-%{version}.tar.bz2
@@ -24,10 +24,6 @@ BuildRequires:	taglib-devel >= 1.10
 %ifarch %{ix86} %{x8664} x32
 BuildRequires:	yasm
 %endif
-Requires:	qmmp-effect-srconverter = %{version}-%{release}
-Requires:	qmmp-engine-ffvideo = %{version}-%{release}
-Requires:	qmmp-input-ffap = %{version}-%{release}
-Requires:	qmmp-visual-goom = %{version}-%{release}
 Obsoletes:	qmmp-effect-srconverter < 2.3.0-1
 Obsoletes:	qmmp-engine-ffvideo < 2.3.0-1
 Obsoletes:	qmmp-general-history < 1.3.1-1
@@ -79,6 +75,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog ChangeLog.svn
 %lang(ru) %doc ChangeLog.rus README.RUS
 %{_libdir}/qmmp-2.3/Effect/libsrconverter.so
+%dir %{_libdir}/qmmp-2.3/Engines
 %{_libdir}/qmmp-2.3/Engines/libffvideo.so
 %{_libdir}/qmmp-2.3/Engines/libmplayer.so
 %{_libdir}/qmmp-2.3/Input/libffap.so
